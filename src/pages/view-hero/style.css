@@ -1,0 +1,30 @@
+h1 {
+    color: white;
+}
+
+p {
+    color: white;
+    text-align: justify;
+}
+
+.view-hero  a {
+    color: darkred;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.view-hero a:hove {
+    color: darkred;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+
+.view-hero .img-fluid {
+    max-width: 300px;
+    max-height: 300px;
+    height: 300px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.75), 0 3px 6px rgba(0,0,0,0.70);
+}

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as ListHeroesActions from '../actions'
+import * as ListHeroesActions from '../actions/ListHeroes'
 import ListHeroes from '../pages/list-heroes'
 
 export default connect(

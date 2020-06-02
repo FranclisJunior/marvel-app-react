@@ -1,8 +1,7 @@
-import { HttpGet } from '../util/HttpRequest'
+import {HttpGet} from '../util/HttpRequest'
 
 export const START_DATA_LOADING = 'ListState/START_DATA_LOADING';
 export const DATA_LOADED = 'ListState/DATA_LOADED';
-
 
 function startDataLoading() {
     return {
@@ -17,10 +16,9 @@ function dataLoaded(data, page, totalPages) {
     };
 }
 
-export function loadData(options) {
+export function listHeroes(options) {
     return (dispatch) => {
         dispatch(startDataLoading());
-
         const {
             offset,
             name,

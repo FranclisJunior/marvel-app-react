@@ -2,17 +2,12 @@ import axios from 'axios'
 
 class HttpRequest {
     static instance() {
-        const instance = axios.create({
+        return axios.create({
             baseURL: 'https://gateway.marvel.com/v1/public/',
-            params: {
-                "apikey": "71c6c66725f512871978edcf015edc26"
-            },
             timeout: 10000,
             method: 'get',
             responseType: 'json'
         });
-        return instance;
-
     }
 
     async Get(urlApi, param = {}) {
@@ -26,7 +21,7 @@ class HttpRequest {
     }
 }
 
-var request = new HttpRequest();
+const request = new HttpRequest();
 
 export const HttpGet = async (urlApi, param = {}) => {
     return await request.Get(urlApi, param);

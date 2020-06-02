@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import ListHeroesContainer from "./containers/ListHeroesContainer";
 import Header from "./components/header";
-import Search from "./components/search";
+import ListHeroesContainer from "./containers/ListHeroesContainer";
+import ViewHero from "./containers/ViewHeroContainer";
 
 class App extends Component {
     render() {
@@ -12,12 +11,10 @@ class App extends Component {
             <div>
                 <Header/>
                 <Container className="main">
-                    <Row className="row">
-                        <Col xs={12}>
-                            <Search/>
-                            <ListHeroesContainer/>
-                        </Col>
-                    </Row>
+                    <Router>
+                        <Route path="/" exact={true} component={ListHeroesContainer}/>
+                        <Route path="/hero/:heroId" component={ViewHero}/>
+                    </Router>
                 </Container>
             </div>
         );
