@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/marvel-app-react/static/css/main.11c9b09c.chunk.css",
-    "main.js": "/marvel-app-react/static/js/main.b14c989a.chunk.js",
-    "main.js.map": "/marvel-app-react/static/js/main.b14c989a.chunk.js.map",
+    "main.js": "/marvel-app-react/static/js/main.4fcbce93.chunk.js",
+    "main.js.map": "/marvel-app-react/static/js/main.4fcbce93.chunk.js.map",
     "runtime-main.js": "/marvel-app-react/static/js/runtime-main.6725ee53.js",
     "runtime-main.js.map": "/marvel-app-react/static/js/runtime-main.6725ee53.js.map",
     "static/js/2.3ab2e956.chunk.js": "/marvel-app-react/static/js/2.3ab2e956.chunk.js",
     "static/js/2.3ab2e956.chunk.js.map": "/marvel-app-react/static/js/2.3ab2e956.chunk.js.map",
     "index.html": "/marvel-app-react/index.html",
-    "precache-manifest.4906420e7b4c97acf85a6a6daa520ab1.js": "/marvel-app-react/precache-manifest.4906420e7b4c97acf85a6a6daa520ab1.js",
+    "precache-manifest.cd2a6c53464f7f99866ea8fd92fc806b.js": "/marvel-app-react/precache-manifest.cd2a6c53464f7f99866ea8fd92fc806b.js",
     "service-worker.js": "/marvel-app-react/service-worker.js",
     "static/css/main.11c9b09c.chunk.css.map": "/marvel-app-react/static/css/main.11c9b09c.chunk.css.map",
     "static/js/2.3ab2e956.chunk.js.LICENSE.txt": "/marvel-app-react/static/js/2.3ab2e956.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.6725ee53.js",
     "static/js/2.3ab2e956.chunk.js",
     "static/css/main.11c9b09c.chunk.css",
-    "static/js/main.b14c989a.chunk.js"
+    "static/js/main.4fcbce93.chunk.js"
   ]
 }
