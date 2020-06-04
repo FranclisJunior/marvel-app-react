@@ -9,11 +9,11 @@ let HeroForm = props => {
         <form onSubmit={handleSubmit}>
             <div className="form-group">
                 <label className="control-label" htmlFor="name">First Name</label>
-                <Field className="form-control" name="name" component="input" type="text" />
+                <Field data-testid="input-name" className="form-control" name="name" component="input" type="text" />
             </div>
             <div className="form-group">
                 <label className="control-label" htmlFor="description">Description</label>
-                <Field className="form-control" name="description" component="textarea" type="text" />
+                <Field data-testid="input-description"  className="form-control" name="description" component="textarea" type="text" />
             </div>
             <Button variant="primary" type="submit" className="float-right">
                 Save
