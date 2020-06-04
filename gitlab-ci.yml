@@ -19,3 +19,12 @@ react_build:
     - npm install
   script:
     - npm run-script build
+
+react_deploy:
+  image: node:8.9.4
+  stage: build
+  before_script:
+    - npm install
+    - npm run-script predeploy
+  script:
+    - npm run-script deploy
