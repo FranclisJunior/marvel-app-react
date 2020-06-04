@@ -2,13 +2,19 @@ import React, {Component} from "react";
 import {CircleToBlockLoading} from "react-loadingg";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import './style.css'
 import {Link} from "react-router-dom";
+import * as Icon from 'react-feather';
+import Modal from "react-bootstrap/Modal"
+import HeroForm from "../../components/hero-form"
+import './style.css'
 
 export default class ViewHero extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            showEdit: false,
+        };
     }
 
     componentDidMount() {
@@ -16,7 +22,15 @@ export default class ViewHero extends Component {
         this.props.actions.getHero(params.heroId)
     }
 
+    submit = (hero) => {
+        this.props.actions.saveHero(hero);
+        this.setState({showEdit: false});
+    }
+
     render() {
+        const handleClose = () => this.setState({showEdit: false});
+        const handleShow = () => this.setState({showEdit: true});
+
         return (
             <div className="loading">
                 {this.props.loading &&
@@ -38,7 +52,7 @@ export default class ViewHero extends Component {
                                 <Link to={'/'} className="d-block" >  Back to list</Link>
                             </div>
                         </Col>
-                        <Col md={8}>
+                        <Col md={7}>
                             <h1>{this.props.hero.name}</h1>
                             {this.props.hero.description ?
                                 (<p>{this.props.hero.description}</p>)
@@ -46,6 +60,22 @@ export default class ViewHero extends Component {
                                 (<p>No description</p>)
                             }
                         </Col>
+
+                        <Col md={1}>
+                            <Icon.Edit2 color="white" onClick={handleShow}/>
+                        </Col>
+                        <Modal show={this.state.showEdit}
+                               onHide={handleClose}
+                               size="md"
+                               aria-labelledby="contained-modal-title-vcenter"
+                               centered>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Edit Hero</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <HeroForm onSubmit={this.submit}/>
+                            </Modal.Body>
+                        </Modal>
                     </Row>
                 }
             </div>

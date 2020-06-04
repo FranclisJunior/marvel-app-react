@@ -16,22 +16,38 @@ function dataLoaded(hero) {
     };
 }
 
-export function getHero(heroId) {
+export function saveHero(hero) {
+    localStorage.setItem(hero.id, JSON.stringify(hero));
     return (dispatch) => {
-        dispatch(startDataLoading());
+        dispatch(dataLoaded(hero))
+    }
+}
 
-        HttpGet(`characters/${heroId}?`)
-            .then(result => {
-                try {
-                    if (result.status === 200) {
-                        dispatch(dataLoaded(result.data.data.results[0]))
-                    } else {
-                        throw new Error(`Marvel API bad response. Status code ${result.status}.`);
+
+export function getHero(heroId) {
+    if (localStorage.getItem(heroId)) {
+        const hero = JSON.parse(localStorage.getItem(heroId))
+        return (dispatch) => {
+            dispatch(startDataLoading());
+            dispatch(dataLoaded(hero))
+        }
+    } else {
+        return (dispatch) => {
+            dispatch(startDataLoading());
+
+            HttpGet(`characters/${heroId}?`)
+                .then(result => {
+                    try {
+                        if (result.status === 200) {
+                            dispatch(dataLoaded(result.data.data.results[0]))
+                        } else {
+                            throw new Error(`Marvel API bad response. Status code ${result.status}.`);
+                        }
+                    } catch (error) {
+                        console.error(error);
+                        dispatch(dataLoaded(undefined))
                     }
-                } catch (error) {
-                    console.error(error);
-                    dispatch(dataLoaded(undefined))
-                }
-            });
+                });
+        }
     }
 }
