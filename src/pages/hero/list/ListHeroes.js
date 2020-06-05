@@ -29,14 +29,14 @@ export default class ListHeroes extends Component {
                                 </div>
                             }
 
-                            {!this.props.loading && !this.props.data.length &&
+                            {!this.props.loading && !this.props.heroes.length &&
                                 <div className='col-sm-12 col-lg-12'>
                                     <h1 className='no-result'>No heroes found with this name</h1>
                                 </div>
                             }
 
-                            {!this.props.loading && this.props.data &&
-                                this.props.data.map(item =>
+                            {!this.props.loading && this.props.heroes &&
+                                this.props.heroes.map(item =>
                                     <HeroCard
                                         key={item.id}
                                         id={item.id}

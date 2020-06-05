@@ -1,12 +1,12 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as HeroActions from '../actions/hero/ViewHero'
+import * as HeroActions from '../actions/HeroActions'
 import ViewHero from '../pages/hero/view/ViewHero'
 
 export default connect(
     state => ({
-        hero: state.viewHero.hero,
-        loading: state.listHeroes.loading
+        hero: state.hero.hero,
+        loading: state.hero.loading
     }),
     dispatch => ({
         actions: bindActionCreators(HeroActions, dispatch),
