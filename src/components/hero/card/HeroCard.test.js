@@ -2,9 +2,9 @@ import React from "react";
 import { render, waitForElement } from "@testing-library/react";
 import { MemoryRouter } from 'react-router-dom';
 
-import HeroCard from "./index";
+import HeroCard from "./HeroCard";
 
-describe('Tests for HeroCard component', () => {
+describe('HeroCard', () => {
     it("Render component name", async () => {
         const { getByText} = render(<MemoryRouter><HeroCard name={'First test'}/> </MemoryRouter>)
         const elemName = await waitForElement(() => getByText('First test'))

@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-import HeroCard from '../../components/herocard/index'
+import HeroCard from '../../../components/hero/card/HeroCard'
 import {CircleToBlockLoading} from 'react-loadingg'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Search from '../../components/search'
+import Search from '../../../components/search/Search'
 import './style.css'
 
 export default class ListHeroes extends Component {

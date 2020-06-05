@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import {Link} from "react-router-dom";
 import * as Icon from 'react-feather';
 import Modal from "react-bootstrap/Modal"
-import HeroForm from "../../components/hero-form"
+import HeroForm from "../../../components/hero/form/HeroForm"
 import './style.css'
 
 export default class ViewHero extends Component {

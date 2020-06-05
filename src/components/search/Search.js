@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import {bindActionCreators} from 'redux'
-import * as HeroActions from '../../actions/ListHeroes'
+import * as HeroActions from '../../actions/hero/ListHeroes'
 import './style.css'
 
 export class Search extends Component {

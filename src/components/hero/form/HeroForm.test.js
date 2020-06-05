@@ -7,7 +7,7 @@ import HeroForm from "./index";
 const mockStore = configureMockStore();
 const store = mockStore({viewHero: {hero: {name: 'Spider Man', description: 'Lorem Ipsum'}}});
 
-describe('Tests for Hero Form component', () => {
+describe('HeroForm', () => {
     it("Clear name input", async () => {
         const {getByTestId} = render(<Provider store={store}> <HeroForm/> </Provider>);
         const inputName = await waitForElement(() => getByTestId('input-name'));

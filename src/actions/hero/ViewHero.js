@@ -1,4 +1,4 @@
-import {HttpGet} from '../util/HttpRequest'
+import {HttpGet} from '../../utils/HttpRequest'
 
 export const START_DATA_LOADING = 'ViewState/START_DATA_LOADING';
 export const DATA_LOADED = 'ViewState/DATA_LOADED';

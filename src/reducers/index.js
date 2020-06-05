@@ -1,8 +1,8 @@
 // @flow
 import { combineReducers } from 'redux'
 import { reducer as formReducer } from 'redux-form'
-import listHeroes from './list-heroes';
-import viewHero from "./view-hero";
+import listHeroes from './hero/list';
+import viewHero from "./hero/view";
 
 export default combineReducers({
     listHeroes: listHeroes,

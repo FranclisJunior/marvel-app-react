@@ -1,12 +1,14 @@
-import {DATA_LOADED, START_DATA_LOADING} from "../../actions/ViewHero";
+import {DATA_LOADED, START_DATA_LOADING} from "../../../actions/hero/ListHeroes";
 
 const initialState = {
     loading: false,
-    hero: undefined
+    page: 1,
+    totalPages: 0,
+    data: [],
 };
 
 
-export default function viewHero(state = initialState, action = {}) {
+export default function listHeroes(state = initialState, action = {}) {
     switch (action.type) {
         case START_DATA_LOADING:
             return Object.assign({}, state, {
@@ -15,7 +17,9 @@ export default function viewHero(state = initialState, action = {}) {
         case DATA_LOADED:
             return Object.assign({}, state, {
                 loading: false,
-                hero: action.payload.hero
+                data: action.payload.data,
+                page: action.payload.page,
+                totalPages: action.payload.totalPages
             });
         default:
             return state;
